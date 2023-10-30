@@ -21,10 +21,14 @@ const page = () => {
     e.preventDefault();
 
     const arr = Object.entries(data);
-    let tp = 0;
-    let j = 0;
-    let sr = 0;
-    let sl = 0;
+    let gjl_utama = 0;
+    let gjl_lain = 0;
+    let ya = 0;
+    let tidak = 0;
+    let depresi_ringan = 0;
+    let depresi_sedang = 0;
+    let depresi_berat = 0;
+
     arr.map((e, i) => {
       if (e[1] == "tidakpernah") {
         tp++;
