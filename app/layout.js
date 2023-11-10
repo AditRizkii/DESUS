@@ -1,9 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/app/_components/Navbar";
-import Footer from "@/app/_components/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
+import { SessionProvider } from "next-auth/react";
 
 export const metadata = {
   title: "Desus",
@@ -13,7 +11,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </head>
+      <body className=" font-Poppins">
         {/* <Navbar /> */}
         {children}
         {/* <Footer /> */}

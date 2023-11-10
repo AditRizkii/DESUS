@@ -1,10 +1,14 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const SideBar = () => {
+  const active = "bg-blue-500/13 rounded-lg font-semibold text-slate-700";
+  const path = usePathname();
   return (
     <aside
-      className="fixed inset-y-0 flex-wrap items-center justify-between block w-full p-0 my-4 overflow-y-auto antialiased transition-transform duration-200 -translate-x-full bg-white border-0 shadow-xl dark:shadow-none dark:bg-slate-850 max-w-xs max-w-64 ease-nav-brand z-990 xl:ml-6 rounded-2xl xl:left-0 xl:translate-x-0"
+      className="fixed font-Poppins inset-y-0 flex-wrap items-center justify-between block w-full p-0 my-4 overflow-y-auto antialiased transition-transform duration-200 -translate-x-full bg-white border-0 shadow-xl dark:shadow-none dark:bg-slate-850 max-w-xs max-w-64 ease-nav-brand z-990 xl:ml-6 rounded-2xl xl:left-0 xl:translate-x-0"
       aria-expanded="false"
     >
       <div className="h-19">
@@ -17,12 +21,12 @@ const SideBar = () => {
           href="/admin"
         >
           <img
-            src="/img/logo-ct-dark.png"
+            src="/logo.png"
             className="inline h-full max-w-full transition-all duration-200 dark:hidden ease-nav-brand max-h-8"
             alt="main_logo"
           />
           <img
-            src="/img/logo-ct.png"
+            src="/logo.png"
             className="hidden h-full max-w-full transition-all duration-200 dark:inline ease-nav-brand max-h-8"
             alt="main_logo"
           />
@@ -38,11 +42,19 @@ const SideBar = () => {
         <ul className="flex flex-col pl-0 mb-0">
           <li className="mt-0.5 w-full">
             <Link
-              className="py-2.7 bg-blue-500/13  dark:opacity-80 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap rounded-lg px-4 font-semibold text-slate-700 transition-colors"
+              className={`${
+                path === "/admin" ? active : ""
+              } py-2.7 dark:opacity-80 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors`}
               href="/admin"
             >
               <div className="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
                 {/* <i className="relative top-0 text-sm leading-normal text-blue-500 ni ni-tv-2"></i> */}
+                <img
+                  width="30"
+                  height="30"
+                  src="https://img.icons8.com/external-kmg-design-flat-kmg-design/32/external-dashboard-ui-essential-kmg-design-flat-kmg-design.png"
+                  alt="external-dashboard-ui-essential-kmg-design-flat-kmg-design"
+                />
               </div>
               <span className="ml-1 duration-300 opacity-100 pointer-events-none ease">
                 Dashboard
@@ -52,11 +64,19 @@ const SideBar = () => {
 
           <li className="mt-0.5 w-full">
             <Link
-              className=" dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
-              href="/user"
+              className={`${
+                path === "/admin/user" ? active : ""
+              } dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors`}
+              href="/admin/user"
             >
               <div className="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
                 {/* <i className="relative top-0 text-sm leading-normal text-orange-500 ni ni-calendar-grid-58"></i> */}
+                <img
+                  width="30"
+                  height="30"
+                  src="https://img.icons8.com/office/30/person-male-skin-type-4.png"
+                  alt="person-male-skin-type-4"
+                />
               </div>
               <span className="ml-1 duration-300 opacity-100 pointer-events-none ease">
                 User
@@ -66,11 +86,19 @@ const SideBar = () => {
 
           <li className="mt-0.5 w-full">
             <Link
-              className="dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
-              href="#"
+              className={`${
+                path === "/admin/gejala" ? active : ""
+              } dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors`}
+              href="/admin/gejala"
             >
               <div className="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center fill-current stroke-0 text-center xl:p-2.5">
                 {/* <i className="relative top-0 text-sm leading-normal text-emerald-500 ni ni-credit-card"></i> */}
+                <img
+                  width="30"
+                  height="30"
+                  src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/external-depression-mental-health-flaticons-flat-flat-icons-2.png"
+                  alt="external-depression-mental-health-flaticons-flat-flat-icons-2"
+                />
               </div>
               <span className="ml-1 duration-300 opacity-100 pointer-events-none ease">
                 Gejala
@@ -80,11 +108,19 @@ const SideBar = () => {
 
           <li className="mt-0.5 w-full">
             <Link
-              className="dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
-              href="#"
+              className={`${
+                path === "/admin/diagnosa" ? active : ""
+              } dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors`}
+              href="/admin/diagnosa"
             >
               <div className="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
                 {/* <i className="relative top-0 text-sm leading-normal text-cyan-500 ni ni-app"></i> */}
+                <img
+                  width="30"
+                  height="30"
+                  src="https://img.icons8.com/fluency/48/unknown-results.png"
+                  alt="unknown-results"
+                />
               </div>
               <span className="ml-1 duration-300 opacity-100 pointer-events-none ease">
                 Diagnosa
@@ -94,62 +130,22 @@ const SideBar = () => {
 
           <li className="mt-0.5 w-full">
             <Link
-              className="dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
-              href="#"
+              className={`${
+                path === "/admin/hasil" ? active : ""
+              } dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors`}
+              href="/admin/hasil"
             >
               <div className="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
                 {/* <i className="relative top-0 text-sm leading-normal text-red-600 ni ni-world-2"></i> */}
+                <img
+                  width="30"
+                  height="30"
+                  src="https://img.icons8.com/fluency/48/test-passed.png"
+                  alt="test-passed"
+                />
               </div>
               <span className="ml-1 duration-300 opacity-100 pointer-events-none ease">
-                RTL
-              </span>
-            </Link>
-          </li>
-
-          <li className="w-full mt-4">
-            <h6 className="pl-6 ml-2 text-xs font-bold leading-tight uppercase dark:text-white opacity-60">
-              Account pages
-            </h6>
-          </li>
-
-          <li className="mt-0.5 w-full">
-            <Link
-              className="dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
-              href="#"
-            >
-              <div className="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
-                {/* <i className="relative top-0 text-sm leading-normal text-slate-700 ni ni-single-02"></i> */}
-              </div>
-              <span className="ml-1 duration-300 opacity-100 pointer-events-none ease">
-                Profile
-              </span>
-            </Link>
-          </li>
-
-          <li className="mt-0.5 w-full">
-            <Link
-              className="dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
-              href="#"
-            >
-              <div className="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
-                {/* <i className="relative top-0 text-sm leading-normal text-orange-500 ni ni-single-copy-04"></i> */}
-              </div>
-              <span className="ml-1 duration-300 opacity-100 pointer-events-none ease">
-                Sign In
-              </span>
-            </Link>
-          </li>
-
-          <li className="mt-0.5 w-full">
-            <Link
-              className="dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
-              href="#"
-            >
-              <div className="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
-                {/* <i className="relative top-0 text-sm leading-normal text-cyan-500 ni ni-collection"></i> */}
-              </div>
-              <span className="ml-1 duration-300 opacity-100 pointer-events-none ease">
-                Sign Up
+                Hasil
               </span>
             </Link>
           </li>
