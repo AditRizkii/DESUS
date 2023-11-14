@@ -1,7 +1,11 @@
+import getHasil from "@/app/api/hasil/get-hasil";
 import Link from "next/link";
 import React from "react";
 
-const page = () => {
+const page = async () => {
+  const hasil = await getHasil();
+  const arr = Object.values(hasil);
+
   return (
     <div class="w-full px-6 py-6 mx-auto">
       <div class="flex flex-wrap gap-5 -mx-3 w-full">
@@ -33,40 +37,51 @@ const page = () => {
               </tr>
             </thead>
             <tbody>
-              <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                <th
-                  scope="row"
-                  class="px-6 py-4 font-medium  whitespace-nowrap dark:text-white"
-                >
-                  $rolename
-                </th>
-                <td class="px-6 py-4">email</td>
-                <td class="px-6 py-4">email</td>
-                <td class=" py-4 text-right">
-                  <div class="mx-2">
-                    <Link
-                      href="#"
-                      class="bg-blue-100 text-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-300"
+              {arr.length > 0 ? (
+                arr.map((e, i) => {
+                  return (
+                    <tr
+                      class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+                      key={i}
                     >
-                      Edit
-                    </Link>
-                    |
-                    <form
-                      method="POST"
-                      class="inline-block"
-                      action="#"
-                      // onsubmit="return confirm('Apakah Anda Yakin?')"
-                    >
-                      <button
-                        type="submit"
-                        class="bg-red-800 text-red-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:text-red-300"
+                      <th
+                        scope="row"
+                        class="px-6 py-4 font-medium  whitespace-nowrap dark:text-white"
                       >
-                        Delete
-                      </button>
-                    </form>
-                  </div>
-                </td>
-              </tr>
+                        {e?.diagnosa_id}
+                      </th>
+                      <td class="px-6 py-4">{e?.gejala_id}</td>
+                      <td class="px-6 py-4">{e?.tingkat_id}</td>
+                      <td class=" py-4 text-right">
+                        <div class="mx-2">
+                          <Link
+                            href="#"
+                            class="bg-blue-100 text-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-300"
+                          >
+                            Edit
+                          </Link>
+                          |
+                          <form
+                            method="POST"
+                            class="inline-block"
+                            action="#"
+                            // onsubmit="return confirm('Apakah Anda Yakin?')"
+                          >
+                            <button
+                              type="submit"
+                              class="bg-red-800 text-red-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:text-red-300"
+                            >
+                              Delete
+                            </button>
+                          </form>
+                        </div>
+                      </td>
+                    </tr>
+                  );
+                })
+              ) : (
+                <tr className="text-center w-full">No data</tr>
+              )}
             </tbody>
           </table>
         </div>

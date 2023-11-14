@@ -66,9 +66,8 @@ const NavbarAdmin = () => {
             </li>
             <li class="flex items-center pl-4 xl:hidden">
               <Link
-                href="javascript:;"
+                href="#"
                 class="block p-0 text-sm transition-all ease-nav-brand"
-                sidenav-trigger
               >
                 <div class="w-4.5 overflow-hidden">
                   <i class="ease mb-0.75 relative block h-0.5 rounded-sm bg-white transition-all"></i>
@@ -82,7 +81,7 @@ const NavbarAdmin = () => {
                 href="javascript:;"
                 class="p-0 text-sm text-black transition-all ease-nav-brand"
               >
-                <i fixed-plugin-button-nav class="cursor-pointer fa fa-cog"></i>
+                <i class="cursor-pointer fa fa-cog"></i>
                 {/* <!-- fixed-plugin-button-nav  --> */}
               </Link>
             </li>

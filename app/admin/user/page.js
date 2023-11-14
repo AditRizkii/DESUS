@@ -1,6 +1,9 @@
+import getUser from "@/app/api/user/getUser";
 import Link from "next/link";
 
-export default function Home() {
+export default async function Home() {
+  const users = await getUser();
+  const arr = Object.values(users);
   return (
     <>
       <div class="w-full px-6 py-6 mx-auto">
@@ -34,39 +37,50 @@ export default function Home() {
                 </tr>
               </thead>
               <tbody>
-                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                  <th
-                    scope="row"
-                    class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white"
-                  >
-                    <div class="font-normal text-gray-500">name</div>
-                  </th>
-                  <td class="px-6 py-4">email</td>
-                  <td class="px-6 py-4">admin</td>
-                  <td class=" py-4 flex justify-end">
-                    <div>
-                      <Link
-                        href="#"
-                        class="bg-blue-100 text-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-300"
+                {arr.length > 0 ? (
+                  arr.map((e, i) => {
+                    return (
+                      <tr
+                        class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
+                        key={i}
                       >
-                        Edit
-                      </Link>
-                      <form
-                        method="POST"
-                        action="#"
-                        // onsubmit="return confirm('Apakah Anda Yakin?')"
-                        class="inline-block"
-                      >
-                        <button
-                          type="submit"
-                          class="bg-red-100 text-red-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300"
+                        <th
+                          scope="row"
+                          class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white"
                         >
-                          Delete
-                        </button>
-                      </form>
-                    </div>
-                  </td>
-                </tr>
+                          <div class="font-normal text-gray-500">{e?.name}</div>
+                        </th>
+                        <td class="px-6 py-4">{e?.email}</td>
+                        <td class="px-6 py-4">{e?.role}</td>
+                        <td class=" py-4 flex justify-end">
+                          <div>
+                            <Link
+                              href="#"
+                              class="bg-blue-100 text-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-300"
+                            >
+                              Edit
+                            </Link>
+                            <form
+                              method="POST"
+                              action="#"
+                              // onsubmit="return confirm('Apakah Anda Yakin?')"
+                              class="inline-block"
+                            >
+                              <button
+                                type="submit"
+                                class="bg-red-100 text-red-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300"
+                              >
+                                Delete
+                              </button>
+                            </form>
+                          </div>
+                        </td>
+                      </tr>
+                    );
+                  })
+                ) : (
+                  <tr></tr>
+                )}
               </tbody>
             </table>
           </div>

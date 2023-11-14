@@ -1,7 +1,14 @@
 import Link from "next/link";
 import React from "react";
+import getGejala from "@/app/api/gejala/get-gejala";
+import getJenisGejala from "@/app/api/JenisGejala/get-jenis-gejala";
 
-const page = () => {
+const page = async () => {
+  const gejala = await getGejala();
+  const arr = Object.values(gejala);
+
+  // const jenisgejala = await getJenisGejala();
+  // const arrJenisGejala = Object.values(jenisgejala);
   return (
     <div class="w-full px-6 py-6 mx-auto">
       <div class="flex flex-wrap gap-5 -mx-3 w-full">
@@ -21,7 +28,7 @@ const page = () => {
                 <th scope="col" class="px-6 py-3">
                   Nama
                 </th>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" class="text-center py-3">
                   Jenis
                 </th>
                 <th scope="col" class="pr-5">
@@ -30,39 +37,50 @@ const page = () => {
               </tr>
             </thead>
             <tbody>
-              <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                <th
-                  scope="row"
-                  class="px-6 py-4 font-medium  whitespace-nowrap dark:text-white"
-                >
-                  $rolename
-                </th>
-                <td class="px-6 py-4">email</td>
-                <td class=" py-4 text-right">
-                  <div class="mx-2">
-                    <Link
-                      href="#"
-                      class="bg-blue-100 text-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-300"
+              {arr.length > 0 ? (
+                arr.map((e, i) => {
+                  return (
+                    <tr
+                      class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+                      key={i}
                     >
-                      Edit
-                    </Link>
-                    |
-                    <form
-                      method="POST"
-                      class="inline-block"
-                      action="#"
-                      // onsubmit="return confirm('Apakah Anda Yakin?')"
-                    >
-                      <button
-                        type="submit"
-                        class="bg-red-100 text-red-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300"
+                      <th
+                        scope="row"
+                        class="px-6 py-4 font-medium  whitespace-nowrap dark:text-white"
                       >
-                        Delete
-                      </button>
-                    </form>
-                  </div>
-                </td>
-              </tr>
+                        {e?.nama}
+                      </th>
+                      <td class="text-center py-4">{e?.jenisGejala_id}</td>
+                      <td class=" py-4 text-right">
+                        <div class="mx-2">
+                          <Link
+                            href="#"
+                            class="bg-blue-100 text-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-300"
+                          >
+                            Edit
+                          </Link>
+                          |
+                          <form
+                            method="POST"
+                            class="inline-block"
+                            action="#"
+                            // onsubmit="return confirm('Apakah Anda Yakin?')"
+                          >
+                            <button
+                              type="submit"
+                              class="bg-red-100 text-red-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300"
+                            >
+                              Delete
+                            </button>
+                          </form>
+                        </div>
+                      </td>
+                    </tr>
+                  );
+                })
+              ) : (
+                <tr className=" text-right text-slate-600">No data</tr>
+              )}
             </tbody>
           </table>
         </div>
@@ -88,38 +106,47 @@ const page = () => {
               </tr>
             </thead>
             <tbody>
-              <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                <th
-                  scope="row"
-                  class="px-6 py-4 font-medium  whitespace-nowrap dark:text-white"
-                >
-                  $rolename
-                </th>
-                <td class=" py-4 text-right">
-                  <div class="mx-2">
-                    <Link
-                      href="#"
-                      class="bg-blue-100 text-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-300"
+              {/* {arrJenisGejala.length > 0 ? (
+                arrJenisGejala.map((e, i) => {
+                  <tr
+                    class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+                    key={i}
+                  >
+                    <th
+                      scope="row"
+                      class="px-6 py-4 font-medium  whitespace-nowrap dark:text-white"
                     >
-                      Edit
-                    </Link>
-                    |
-                    <form
-                      method="POST"
-                      class="inline-block"
-                      action="#"
-                      // onsubmit="return confirm('Apakah Anda Yakin?')"
-                    >
-                      <button
-                        type="submit"
-                        class="bg-red-100 text-red-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300"
-                      >
-                        Delete
-                      </button>
-                    </form>
-                  </div>
-                </td>
-              </tr>
+                      {e?.nama}
+                    </th>
+                    <td class=" py-4 text-right">
+                      <div class="mx-2">
+                        <Link
+                          href="#"
+                          class="bg-blue-100 text-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-300"
+                        >
+                          Edit
+                        </Link>
+                        |
+                        <form
+                          method="POST"
+                          class="inline-block"
+                          action="#"
+                          // onsubmit="return confirm('Apakah Anda Yakin?')"
+                        >
+                          <button
+                            type="submit"
+                            class="bg-red-100 text-red-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300"
+                          >
+                            Delete
+                          </button>
+                        </form>
+                      </div>
+                    </td>
+                  </tr>;
+                })
+              ) : (
+                <tr></tr>
+              )} */}
             </tbody>
           </table>
         </div>
