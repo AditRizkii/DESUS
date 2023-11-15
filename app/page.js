@@ -4,10 +4,13 @@ import Link from "next/link";
 import React from "react";
 import TypeWriter from "./_components/TypeWriter";
 import { heroImg } from "./_assets/img";
+import Navbar from "./_components/Navbar";
+import Footer from "./_components/Footer";
 
 export default function Home() {
   return (
     <div>
+      <Navbar />
       <section
         id="hero"
         className="w-full h-screen flex flex-row justify-center items-center bg-merahtua font-Poppins"
@@ -260,6 +263,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }
