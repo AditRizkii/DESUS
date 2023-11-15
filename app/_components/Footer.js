@@ -3,7 +3,7 @@ import React from "react";
 const Footer = () => {
   return (
     <footer id="footer" className="w-full">
-      <div className="w-full bottom-0 clearfix bg-merahtua py-6 text-krim flex justify-center">
+      <div className="w-full bottom-0 fixed bg-merahtua py-6 text-krim flex justify-center">
         <div className="copyright ml-8 px-8">
           &copy; Copyright{" "}
           <strong>
