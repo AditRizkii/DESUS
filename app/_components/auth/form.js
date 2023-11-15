@@ -103,23 +103,6 @@ export default function Form({ type }) {
           <p>{type === "login" ? "Sign In" : "Sign Up"}</p>
         )}
       </button>
-      {type === "login" ? (
-        <p className="text-center text-sm text-gray-600">
-          Don&apos;t have an account?{" "}
-          <Link href="/register" className="font-semibold text-gray-800">
-            Sign up
-          </Link>{" "}
-          for free.
-        </p>
-      ) : (
-        <p className="text-center text-sm text-gray-600">
-          Already have an account?{" "}
-          <Link href="/login" className="font-semibold text-gray-800">
-            Sign in
-          </Link>{" "}
-          instead.
-        </p>
-      )}
     </form>
   );
 }
