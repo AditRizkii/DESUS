@@ -1,26 +1,15 @@
-// "use client";
-import React from "react";
-import getGejala from "../api/gejala/get-gejala";
+"use client";
+import { fetchServerResponse } from "next/dist/client/components/router-reducer/fetch-server-response";
 
-const page = async () => {
-  const gejala = await getGejala();
-  // const result = await fetch("/api/gejala/get-gejala");
-  // const data = result.json();
-  // console.log(data);
-  // console.log(JSON.stringify(gejala));
-  // const result = gejala;
-  const arr = Object.values(gejala);
-  // console.log(arr);
+export default async function page() {
+  const response = await fetch("http://localhost:3000/api/gejala/single?id=8");
+
+  const data = await response.json();
+  // const data1 = Object.values(data);
+  console.log(data);
   return (
     <div>
-      {/* {arr.map((e, i) => {
-        return <p key={i}>{e}</p>;
-      })} */}
-      {arr.map((e, i) => {
-        return <p key={i}>{e?.nama}</p>;
-      })}
+      <p>{data?.gejala?.nama}</p>
     </div>
   );
-};
-
-export default page;
+}
