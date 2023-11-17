@@ -16,46 +16,46 @@ export default function layout({ children, session }) {
     <>
       <SessionProvider session={session}>
         <SideBar />
-        <main class="relative h-full font-Poppins max-h-screen transition-all duration-200 ease-in-out xl:ml-68 rounded-xl">
+        <main className="relative h-full font-Poppins max-h-screen transition-all duration-200 ease-in-out xl:ml-68 rounded-xl">
           {/* <!-- Navbar --> */}
           <NavbarAdmin />
           {/* <!-- cards --> */}
-          <div class="w-full px-6 py-6 mx-auto">
+          <div className="w-full px-6 py-6 mx-auto">
             {/* <!-- row 1 --> */}
             {children}
-            <footer class="pt-4">
-              <div class="w-full px-6 mx-auto">
-                <div class="flex flex-wrap items-center -mx-3 lg:justify-between">
-                  <div class="w-full max-w-full px-3 mt-0 mb-6 shrink-0 lg:mb-0 lg:w-1/2 lg:flex-none">
-                    <div class="text-sm leading-normal text-center text-slate-500 lg:text-left">
+            <footer className="pt-4">
+              <div className="w-full px-6 mx-auto">
+                <div className="flex flex-wrap items-center -mx-3 lg:justify-between">
+                  <div className="w-full max-w-full px-3 mt-0 mb-6 shrink-0 lg:mb-0 lg:w-1/2 lg:flex-none">
+                    <div className="text-sm leading-normal text-center text-slate-500 lg:text-left">
                       ©
                       {/* <script>
                       document.write(new Date().getFullYear() + ",");
                     </script> */}
-                      made with <i class="fa fa-heart"></i> by{" "}
+                      made with <i className="fa fa-heart"></i> by{" "}
                       <Link
                         href="#"
-                        class="font-semibold text-slate-700 dark:text-white"
+                        className="font-semibold text-slate-700 dark:text-white"
                         target="_blank"
                       >
                         Desus
                       </Link>{" "}
                     </div>
                   </div>
-                  <div class="w-full max-w-full px-3 mt-0 shrink-0 lg:w-1/2 lg:flex-none">
-                    <ul class="flex flex-wrap justify-center pl-0 mb-0 list-none lg:justify-end">
-                      <li class="nav-item">
+                  <div className="w-full max-w-full px-3 mt-0 shrink-0 lg:w-1/2 lg:flex-none">
+                    <ul className="flex flex-wrap justify-center pl-0 mb-0 list-none lg:justify-end">
+                      <li className="nav-item">
                         <Link
                           href="/"
-                          class="block px-4 pt-0 pb-1 text-sm font-normal transition-colors ease-in-out text-slate-500"
+                          className="block px-4 pt-0 pb-1 text-sm font-normal transition-colors ease-in-out text-slate-500"
                         >
                           Home
                         </Link>
                       </li>
-                      <li class="nav-item">
+                      <li className="nav-item">
                         <Link
                           href="/quiz"
-                          class="block px-4 pt-0 pb-1 pr-0 text-sm font-normal transition-colors ease-in-out text-slate-500"
+                          className="block px-4 pt-0 pb-1 pr-0 text-sm font-normal transition-colors ease-in-out text-slate-500"
                           target="_blank"
                         >
                           Diagnosa

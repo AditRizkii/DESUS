@@ -35,13 +35,13 @@ model Form {
 model Gejala {
   id             Int         @id @default(autoincrement())
   nama           String?
-  jenis_gejala   JenisGejala @relation(fields: [jenisGejala_id], references: [id])
+  jenis_gejala   jenisgejala @relation(fields: [jenisGejala_id], references: [id])
   jenisGejala_id Int
   Hasil_Diagnosa Hasil[]
   Form           Form[]
 }
 
-model JenisGejala {
+model jenisgejala {
   id     Int      @id @default(autoincrement())
   nama   String?
   gejala Gejala[]
