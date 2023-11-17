@@ -68,21 +68,19 @@ export default function Home() {
                   daya yang berguna untuk membantu Anda dalam mengelola depresi
                   Anda
                 </p>
-                <ul>
-                  <li className="flex">
-                    "Ingatlah bahwa DESUS bukanlah pengganti layanan
-                    profesional, jadi pastikan untuk selalu mencari bantuan
-                    medis yang tepat jika Anda mengalami gejala depresi"
-                  </li>
-                </ul>
+                <p className="flex text-gray-700">
+                  "Ingatlah bahwa DESUS bukanlah pengganti layanan
+                  profesional, jadi pastikan untuk selalu mencari bantuan
+                  medis yang tepat jika Anda mengalami gejala depresi"
+                </p>
               </div>
               <div className="col-lg-6 pt-4 lg:pt-0 pb-16">
-                <p className="mb-6">
+                <p className="mb-6 text-gray-700">
                   Kami membuat DESUS sebagai proyek untuk membantu teman-teman
                   yang mungkin mengalami depresi untuk mengetahui tingkat
                   depresi dan menemukan solusi sesuai.
                 </p>
-                <Link href="/" className="flex justify-center pt-4 lg:pt-0">
+                <Link href="#reference" className="flex justify-center pt-4 lg:pt-0">
                   <button className="border-biru border-2 px-8 py-2 rounded-md hover:bg-biru hover:text-slate-200 font-Poppins text-biru font-medium tracking-wider text-sm transition duration-300 hover:duration-500  ease-in-out">
                     Learn More
                   </button>
@@ -109,7 +107,7 @@ export default function Home() {
                 </div>
               </h2>
             </div>
-            <div className="relative w-full bg-krim mt-6 ring-1 ring-krim sm:mx-auto sm:max-w-2xl rounded-md sm:px-10">
+            <div className="w-full bg-krim mt-6 ring-1 ring-krim sm:mx-auto sm:max-w-2xl rounded-md sm:px-10">
               <div className="mx-auto">
                 <div className="py-6">
                   <details className="group">
@@ -144,7 +142,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="relative w-full bg-krim mt-6 ring-1 ring-krim sm:mx-auto sm:max-w-2xl rounded-md sm:px-10">
+            <div className="w-full bg-krim mt-6 ring-1 ring-krim sm:mx-auto sm:max-w-2xl rounded-md sm:px-10">
               <div className="mx-auto">
                 <div className="py-6">
                   <details className="group">
@@ -181,7 +179,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="relative w-full bg-krim mt-6 ring-1 ring-krim sm:mx-auto sm:max-w-2xl sm:rounded-lg sm:px-10">
+            <div className="w-full bg-krim mt-6 ring-1 ring-krim sm:mx-auto sm:max-w-2xl sm:rounded-lg sm:px-10">
               <div className="mx-auto">
                 <div className="py-6">
                   <details className="group">
@@ -220,7 +218,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="relative w-full bg-krim mt-6 ring-1 ring-krim sm:mx-auto sm:max-w-2xl rounded-md sm:px-10">
+            <div className="w-full bg-krim mt-6 ring-1 ring-krim sm:mx-auto sm:max-w-2xl rounded-md sm:px-10">
               <div className="mx-auto">
                 <div className="py-6">
                   <details className="group">
@@ -258,6 +256,44 @@ export default function Home() {
                     </p>
                   </details>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="reference" className="reference bg-krim w-full pt-20 pb-20">
+        <div
+          className="flex-row justify-center bg-white w-11/12 sm:w-9/12 md:w-7/12 lg:w-5/12 mx-auto rounded-lg shadow-sm"
+          data-aos="fade-up"
+          data-aos-duration="1500"
+        >
+          <div className="w-10/12 mx-auto pb-16">
+            <div className="text-center font-Poppins text-4xl font-bold text-merahtua pt-16 pb-12">
+              <h2 className="">
+                REFERENCE
+                <div className="mx-auto w-1/12">
+                  <div className="border-b-[1px] border-slate-300 pb-6"></div>
+                  <div className="border-b-[3px] border-biru w-1/3 mx-auto -m-[2px]"></div>
+                </div>
+              </h2>
+            </div>
+            <div className="mt-4 text-center font-Poppins">
+              <div className="mb-4 text-gray-700">
+                <ul className="">
+                  <li className="mb-2 text-lg">
+                    <Link className="hover:text-biru" href={"https://id.scribd.com/document/367661361/Arhatya-Marsasina-22010112120008-Lap-kti-Bab2"} target="_blank">Referensi Basis Pengetahuan</Link>
+                  </li>
+                  <li className="mb-2 text-lg">
+                    <Link className="hover:text-biru" href={"https://tailwindcss.com/"} target="_blank">Referensi CSS</Link>
+                  </li>
+                  <li className="mb-2 text-lg">
+                    <Link className="hover:text-biru" href={"https://icons8.com/"} target="_blank">Referensi Icon</Link>
+                  </li>
+                  <li className="mb-2 text-lg">
+                    <Link className="hover:text-biru" href={"https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/"} target="_blank">Referensi Template</Link>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>

@@ -39,8 +39,8 @@ export default function Modal() {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        nama: arr[2][1],
-        email: arr[0][1],
+        nama: arr[0][1],
+        email: arr[2][1],
         password: arr[1][1],
       }),
     });
