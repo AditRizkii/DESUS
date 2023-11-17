@@ -14,7 +14,7 @@ export default async function Home() {
               <caption class="p-5 text-lg font-semibold text-left text-gray-900 bg-white dark:text-white dark:bg-gray-800">
                 Admin{" "}
                 <Link
-                  href="#"
+                  href="/admin/user/create"
                   class="mt-1 mx-2 px-2 py-2 mb-2 bg-blue-100 text-blue-800 text-xs font-medium mr-2 rounded dark:bg-blue-900 dark:text-blue-300"
                 >
                   Create
