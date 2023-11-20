@@ -6,13 +6,13 @@ import React from "react";
 
 const Button = ({ deleteItem }) => {
   const router = useRouter();
-  const deletePost = async (gejalaID) => {
+  const deletePost = async (userID) => {
     try {
       // setLoading(true);
-      await fetch("/api/gejala/delete", {
+      await fetch("/api/user/delete", {
         method: "DELETE",
         body: JSON.stringify({
-          id: gejalaID,
+          id: userID,
         }),
         headers: { "Content-Type": "application/json" },
       });
