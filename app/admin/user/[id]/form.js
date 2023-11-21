@@ -24,7 +24,7 @@ const EditForm = ({ handleSubmit, updateData, userID }) => {
       <div className="md:flex md:items-center mb-6">
         <div className="md:w-1/3">
           <label
-            className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+            className="block text-slate-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
             htmlFor="nama"
           >
             Nama
@@ -32,7 +32,7 @@ const EditForm = ({ handleSubmit, updateData, userID }) => {
         </div>
         <div className="w-full">
           <input
-            className="bg-gray-200 text-start appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+            className="bg-gray-100 text-start appearance-none border-2 border-gray-100 rounded w-full py-2 px-4 text-slate-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
             id="nama"
             name="nama"
             type="text"
@@ -45,7 +45,7 @@ const EditForm = ({ handleSubmit, updateData, userID }) => {
       <div className="md:flex md:items-center mb-6">
         <div className="md:w-1/3">
           <label
-            className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+            className="block text-slate-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
             htmlFor="email"
           >
             Email
@@ -53,7 +53,7 @@ const EditForm = ({ handleSubmit, updateData, userID }) => {
         </div>
         <div className="w-full">
           <input
-            className="bg-gray-200 text-start appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+            className="bg-gray-100 text-start appearance-none border-2 border-gray-100 rounded w-full py-2 px-4 text-slate-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
             id="email"
             name="email"
             type="email"
@@ -66,7 +66,7 @@ const EditForm = ({ handleSubmit, updateData, userID }) => {
       <div className="md:flex md:items-center mb-6">
         <div className="md:w-1/3">
           <label
-            className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+            className="block text-slate-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
             htmlFor="password"
           >
             Password
@@ -74,7 +74,7 @@ const EditForm = ({ handleSubmit, updateData, userID }) => {
         </div>
         <div className="w-full">
           <input
-            className="bg-gray-200 text-start appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+            className="bg-gray-100 text-start appearance-none border-2 border-gray-100 rounded w-full py-2 px-4 text-slate-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
             id="password"
             name="password"
             type="password"
@@ -85,9 +85,9 @@ const EditForm = ({ handleSubmit, updateData, userID }) => {
       </div>
 
       <div className="md:flex md:items-center mb-6">
-        <div className="md:w-1/3">
+        <div className="md:w-3/12">
           <label
-            className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+            className="block text-slate-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
             htmlFor="role"
           >
             Jenis Gejala
@@ -95,7 +95,7 @@ const EditForm = ({ handleSubmit, updateData, userID }) => {
         </div>
         <div className="md:w-2/3">
           {/* <input
-                    className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                    className="bg-gray-100 appearance-none border-2 border-gray-100 rounded w-full py-2 px-4 text-slate-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
                     id="password"
                     name="password"
                     type="sele"
@@ -105,7 +105,7 @@ const EditForm = ({ handleSubmit, updateData, userID }) => {
           <select
             name="role"
             id="role"
-            className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+            className="bg-gray-100 appearance-none border-2 border-gray-100 rounded w-full py-2 px-4 text-slate-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
           >
             <option value="0" disabled>
               Pilih Role
@@ -129,11 +129,10 @@ const EditForm = ({ handleSubmit, updateData, userID }) => {
       </div>
 
       <div className="md:flex md:items-center">
-        <div className="md:w-1/3"></div>
-        <div className="md:w-2/3">
+        <div className="ml-[170px]">
           <button
             className={
-              "shadow bg-purple-400 hover:bg-purple-400 focus:shadow-outline focus:outline-none py-2 px-4 rounded"
+              "shadow border-merah border-2 hover:bg-merah focus:shadow-outline focus:outline-none py-2 px-6 rounded font-semibold text-merahtua hover:text-white"
             }
             type="submit"
           >
