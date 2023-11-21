@@ -1,4 +1,4 @@
-import Result from "@/app/result/page";
+import Result from "@/app/result/[id]/page";
 import prisma from "@/lib/prisma";
 import { NextRequest, NextResponse } from "next/server";
 

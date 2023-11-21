@@ -5,12 +5,15 @@ import { questions } from "../_constants/question";
 import Modal from "../_components/Quiz/Modal";
 import prisma from "@/lib/prisma";
 import getGejala from "../api/gejala/get-gejala";
+import { diagnose } from "../utils/Diagnose";
+import { useRouter } from "next/navigation";
 
 const Quiz = ({ questions }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [data, setData] = useState({});
   const [result, setResult] = useState("");
   const [solusi, setSolusi] = useState("");
+  const router = useRouter();
   // const [questions, setQuestions] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -27,6 +30,12 @@ const Quiz = ({ questions }) => {
 
   const submit = (e) => {
     e.preventDefault();
+    const result = diagnose(data);
+    if (result === "1" || result === "2" || result === "3" || result === "8") {
+      router.push(`/result/${result}`);
+    }
+    // const arr = data;
+    // console.log(arr);
   };
 
   // useEffect(() => {
@@ -60,9 +69,8 @@ const Quiz = ({ questions }) => {
             {arr.map((e, i) => {
               return (
                 // <p key={i}>{e?.nama}</p>
-                <div className="w-11/12 mx-auto mt-12 text-lg">
+                <div className="w-11/12 mx-auto mt-12 text-lg" key={e?.id}>
                   <Choice
-                    key={e?.id}
                     question={e?.nama}
                     ChoiceId={e?.id}
                     onChange={updateData}

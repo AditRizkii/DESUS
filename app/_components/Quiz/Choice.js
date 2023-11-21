@@ -13,9 +13,9 @@ const Choice = ({ ChoiceId, question, onChange }) => {
             <input
               id={`tidak-${ChoiceId}`}
               type="radio"
-              value="tidak"
+              value={false}
               required
-              name={`tidak-${ChoiceId}`}
+              name={ChoiceId}
               onChange={onChange}
               className="w-4 h-4 text-merah bg-gray-100 border-gray-300 focus:ring-merahtua dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2"
             />
@@ -32,9 +32,9 @@ const Choice = ({ ChoiceId, question, onChange }) => {
             <input
               id={`ya-${ChoiceId}`}
               type="radio"
-              value="ya"
+              value={true}
               required
-              name={`ya-${ChoiceId}`}
+              name={ChoiceId}
               onChange={onChange}
               className="w-4 h-4 text-merah bg-gray-100 border-gray-300 focus:ring-merahtua dark:focus:ring-merah dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
             />
