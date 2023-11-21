@@ -23,7 +23,7 @@ export default function Home() {
                 </div>
                 <div class="px-3 text-right basis-1/3">
                   <div class="inline-block w-12 h-12 text-center rounded-circle bg-gradient-to-tl from-blue-500 to-violet-500">
-                    <i class="ni leading-none ni-money-coins text-lg relative top-3.5 text-white"></i>
+                  <img width="48" height="48" src="https://img.icons8.com/arcade/100/user-male-circle.png" alt="user-male-circle"/>
                   </div>
                 </div>
               </div>
@@ -51,8 +51,8 @@ export default function Home() {
                   </div>
                 </div>
                 <div class="px-3 text-right basis-1/3">
-                  <div class="inline-block w-12 h-12 text-center rounded-circle bg-gradient-to-tl from-red-600 to-orange-600">
-                    <i class="ni leading-none ni-world text-lg relative top-3.5 text-white"></i>
+                  <div class="inline-block w-12 h-12 text-center rounded-circle bg-gradient-to-tl from-yellow-400 to-orange-300">
+                  <img width="48" height="48" src="https://img.icons8.com/3d-fluency/100/neutral-face-1.png" alt="neutral-face-1"/>
                   </div>
                 </div>
               </div>
@@ -80,8 +80,8 @@ export default function Home() {
                   </div>
                 </div>
                 <div class="px-3 text-right basis-1/3">
-                  <div class="inline-block w-12 h-12 text-center rounded-circle bg-gradient-to-tl from-emerald-500 to-teal-400">
-                    <i class="ni leading-none ni-paper-diploma text-lg relative top-3.5 text-white"></i>
+                  <div class="inline-block w-12 h-12 text-center rounded-circle bg-gradient-to-tl from-orange-500 to-yellow-500">
+                  <img width="48" height="48" src="https://img.icons8.com/3d-fluency/100/frowning-face-1.png" alt="frowning-face-1"/>
                   </div>
                 </div>
               </div>
@@ -109,8 +109,8 @@ export default function Home() {
                   </div>
                 </div>
                 <div class="px-3 text-right basis-1/3">
-                  <div class="inline-block w-12 h-12 text-center rounded-circle bg-gradient-to-tl from-orange-500 to-yellow-500">
-                    <i class="ni leading-none ni-cart text-lg relative top-3.5 text-white"></i>
+                  <div class="inline-block w-12 h-12 text-center rounded-circle bg-gradient-to-tl from-red-600 to-orange-600">
+                  <img width="48" height="48" src="https://img.icons8.com/3d-fluency/94/fearful-face-icon.png" alt="fearful-face-icon"/>
                   </div>
                 </div>
               </div>
@@ -250,8 +250,8 @@ export default function Home() {
               <ul class="flex flex-col pl-0 mb-0 rounded-lg">
                 <li class="relative flex justify-between py-2 pr-4 mb-2 border-0 rounded-t-lg rounded-xl text-inherit">
                   <div class="flex items-center">
-                    <div class="inline-block w-8 h-8 mr-4 text-center text-black bg-center shadow-sm fill-current stroke-none bg-gradient-to-tl from-zinc-800 to-zinc-700 dark:bg-gradient-to-tl dark:from-slate-750 dark:to-gray-850 rounded-xl">
-                      <i class="text-white ni ni-mobile-button relative top-0.75 text-xxs"></i>
+                    <div class="inline-block w-8 h-8 mr-4 text-center text-black bg-center fill-current stroke-none rounded-xl">
+                    <img width="32" height="32" src="https://img.icons8.com/arcade/100/high-importance.png" alt="high-importance"/>
                     </div>
                     <div class="flex flex-col">
                       <h6 class="mb-1 text-sm leading-normal text-slate-700 dark:text-white">
@@ -274,8 +274,8 @@ export default function Home() {
                 </li>
                 <li class="relative flex justify-between py-2 pr-4 mb-2 border-0 rounded-xl text-inherit">
                   <div class="flex items-center">
-                    <div class="inline-block w-8 h-8 mr-4 text-center text-black bg-center shadow-sm fill-current stroke-none bg-gradient-to-tl from-zinc-800 to-zinc-700 dark:bg-gradient-to-tl dark:from-slate-750 dark:to-gray-850 rounded-xl">
-                      <i class="text-white ni ni-tag relative top-0.75 text-xxs"></i>
+                    <div class="inline-block w-8 h-8 mr-4 text-center text-black bg-center  fill-current stroke-none rounded-xl">
+                    <img width="32" height="32" src="https://img.icons8.com/arcade/64/plus.png" alt="plus"/>
                     </div>
                     <div class="flex flex-col">
                       <h6 class="mb-1 text-sm leading-normal text-slate-700 dark:text-white">
