@@ -5,8 +5,8 @@ import { NextRequest, NextResponse } from "next/server";
 export const DELETE = async (req) => {
   try {
     const data = await req.json();
-    console.log(data);
-    const result = await prisma.gejala.delete({
+    // console.log(data);
+    const result = await prisma.jenisgejala.delete({
       where: {
         id: data?.id,
       },
@@ -20,11 +20,11 @@ export const DELETE = async (req) => {
 
     //   res.json(result);
     // res.status(200).json({ result });
-    return NextResponse.json({ msg: "success" });
+    return NextResponse.json({ msg: "success", result });
   } catch (err) {
     if (err.code === "P2025") {
       return new NextResponse("No user with ID found", { status: 404 });
     }
-    return NextResponse.json({ err: err });
+    return NextResponse.json({ err: "Failed" });
   }
 };

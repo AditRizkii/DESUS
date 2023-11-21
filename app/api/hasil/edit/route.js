@@ -9,18 +9,17 @@ export const PATCH = async (req, res) => {
   try {
     const data = await req.json();
 
-    const updatedUser = await prisma.user.update({
+    const result = await prisma.hasil.update({
       where: {
-        id: parseInt(data?.userID),
+        id: parseInt(data?.hasilID),
       },
       data: {
-        name: data?.name,
-        email: data?.email,
-        password: await hash(data?.password, 10),
-        role: data?.role,
+        diagnosa_id: data?.diagnosa_id,
+        gejala_id: data?.gejala_id,
+        tingkat_id: data?.tingkat_id,
       },
     });
-    return NextResponse.json({ updatedUser });
+    return NextResponse.json({ result });
   } catch (e) {
     return NextResponse.json(e);
   }

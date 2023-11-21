@@ -26,19 +26,18 @@ export default function page({ params }) {
 
     // send a request to the server.
     const arr = Object.entries(data);
-
-    await fetch("/api/gejala/edit", {
+    // console.log(arr[0][1]);
+    await fetch("/api/JenisGejala/edit", {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        gejalaId: id,
+        jenisgejalaId: id,
         nama: arr[0][1],
-        jenisGejalaID: jenisGejalaID.value,
       }),
     });
     // createUser(arr);
 
-    router.push("/admin/gejala");
+    router.push("/admin/jenisgejala");
     router.refresh();
   };
 
@@ -48,7 +47,7 @@ export default function page({ params }) {
         {/* <!-- row 1 --> */}
         <div className="flex flex-wrap -mx-3 w-full">
           <div className="relative overflow-x-auto shadow-md sm:rounded-lg w-full">
-            <h3 className="px-4 py-3">Edit Gejala</h3>
+            <h3 className="px-4 py-3">Edit Jenis Gejala</h3>
             <EditForm
               handleSubmit={handleSubmit}
               updateData={updateData}

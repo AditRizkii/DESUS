@@ -83,7 +83,7 @@ const EditForm = ({ handleSubmit, updateData, gejalaId }) => {
             }
             type="submit"
           >
-            Create
+            Save
           </button>
         </div>
       </div>

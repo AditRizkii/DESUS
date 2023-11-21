@@ -1,17 +1,21 @@
 import React from "react";
-import getJenisGejala from "@/app/api/JenisGejala/getJenisGejala";
 import Link from "next/link";
+import Button from "./Button";
+// import { fetchSingleGejala } from "@/app/utils/getSingleGejala";
+import getJenisGejala from "@/app/api/JenisGejala/getJenisGejala";
 
 const TabelJenisGejala = async () => {
-  const jenisGejala = await getJenisGejala();
-  const arrJenisGejala = Object.values(jenisGejala);
-  // const arrJenisGejala = await jenisGejala.json();
+  const gejala = await getJenisGejala();
+  const arr = Object.values(gejala);
+
+  // console.log(arr[0]);
+
   return (
     <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
       <caption className="p-5 text-lg font-semibold text-left text-gray-900 bg-white dark:text-white dark:bg-gray-800">
         Jenis Gejala{" "}
         <Link
-          href="#"
+          href="/admin/jenisgejala/create"
           className="mt-1 mx-2 px-2 py-2 mb-2 bg-blue-100 text-blue-800 text-xs font-medium mr-2 rounded dark:bg-blue-900 dark:text-blue-300"
         >
           Create
@@ -28,46 +32,36 @@ const TabelJenisGejala = async () => {
         </tr>
       </thead>
       <tbody>
-        {arrJenisGejala.length > 0 ? (
-          arrJenisGejala.map((e, i) => {
-            <tr
-              className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
-              key={i}
-            >
-              <td
-                scope="row"
-                className="px-6 py-4 font-medium  whitespace-nowrap dark:text-white"
+        {arr.length > 0 ? (
+          arr.map((e, i) => {
+            return (
+              <tr
+                className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+                key={i}
               >
-                {e?.nama}
-              </td>
-              <td className=" py-4 text-right">
-                <div className="mx-2">
-                  <Link
-                    href="#"
-                    className="bg-blue-100 text-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-300"
-                  >
-                    Edit
-                  </Link>
-                  |
-                  <form
-                    method="POST"
-                    className="inline-block"
-                    action="#"
-                    // onsubmit="return confirm('Apakah Anda Yakin?')"
-                  >
-                    <button
-                      type="submit"
-                      className="bg-red-100 text-red-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300"
+                <td
+                  scope="row"
+                  className="px-6 py-4 font-medium  whitespace-nowrap dark:text-white"
+                >
+                  {e?.nama}
+                </td>
+                <td className=" py-4 text-right">
+                  <div className="mx-2">
+                    <Link
+                      href={`/admin/jenisgejala/${e?.id}`}
+                      className="bg-blue-100 text-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-300"
                     >
-                      Delete
-                    </button>
-                  </form>
-                </div>
-              </td>
-            </tr>;
+                      Edit
+                    </Link>
+                    |
+                    <Button deleteItem={e?.id} />
+                  </div>
+                </td>
+              </tr>
+            );
           })
         ) : (
-          <tr></tr>
+          <tr>No Data</tr>
         )}
       </tbody>
     </table>

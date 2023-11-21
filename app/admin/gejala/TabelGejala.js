@@ -1,10 +1,12 @@
 import React from "react";
 import Link from "next/link";
 import getGejala from "@/app/api/gejala/get-gejala";
+import Button from "./Button";
 
 const TabelGejala = async () => {
   const gejala = await getGejala();
   const arr = Object.values(gejala);
+
   return (
     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
       <caption class="p-5 text-lg font-semibold text-left text-gray-900 bg-white dark:text-white dark:bg-gray-800">
@@ -53,19 +55,7 @@ const TabelGejala = async () => {
                       Edit
                     </Link>
                     |
-                    <form
-                      method="POST"
-                      class="inline-block"
-                      action="#"
-                      // onsubmit="return confirm('Apakah Anda Yakin?')"
-                    >
-                      <button
-                        type="submit"
-                        class="bg-red-100 text-red-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300"
-                      >
-                        Delete
-                      </button>
-                    </form>
+                    <Button deleteItem={e?.id} />
                   </div>
                 </td>
               </tr>

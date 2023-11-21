@@ -1,5 +1,6 @@
 import getUser from "@/app/api/user/getUser";
 import Link from "next/link";
+import Button from "./Button";
 
 export default async function Home() {
   const users = await getUser();
@@ -55,24 +56,12 @@ export default async function Home() {
                         <td class=" py-4 flex justify-end">
                           <div>
                             <Link
-                              href="#"
+                              href={`/admin/user/${e?.id}`}
                               class="bg-blue-100 text-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-300"
                             >
                               Edit
                             </Link>
-                            <form
-                              method="POST"
-                              action="#"
-                              // onsubmit="return confirm('Apakah Anda Yakin?')"
-                              class="inline-block"
-                            >
-                              <button
-                                type="submit"
-                                class="bg-red-100 text-red-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300"
-                              >
-                                Delete
-                              </button>
-                            </form>
+                            <Button deleteItem={e?.id} />
                           </div>
                         </td>
                       </tr>

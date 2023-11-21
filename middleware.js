@@ -5,13 +5,8 @@ export default async function middleware(req) {
   // Get the pathname of the request (e.g. /, /protected)
   const path = req.nextUrl.pathname;
 
-  const trueArr = [
-    "/admin",
-    "/admin/diagnosa",
-    "/admin/gejala",
-    "/admin/hasil",
-    "/admin/user",
-  ];
+  const regURL = new RegExp("/admin(/[a-zA-Z0-9._%+-]*)*$");
+  // const regURL1 = /\/admin(\/[a-zA-Z0-9._%+-]*)*$/g;
   // const checkPath = (path) => {
   //   if (trueArr.includes(path)) {
   //     return true;
@@ -29,18 +24,20 @@ export default async function middleware(req) {
     secret: process.env.NEXTAUTH_SECRET,
   });
 
-  if (!session && path === "/admin") {
-    return NextResponse.redirect(new URL("/login", req.url));
-  } else if (!session && path === "/admin/user") {
-    return NextResponse.redirect(new URL("/login", req.url));
-  } else if (!session && path === "/admin/diagnosa") {
-    return NextResponse.redirect(new URL("/login", req.url));
-  } else if (!session && path === "/admin/hasil") {
-    return NextResponse.redirect(new URL("/login", req.url));
-  } else if (!session && path === "/admin/gejala") {
+  if (!session && regURL.test(path)) {
     return NextResponse.redirect(new URL("/login", req.url));
   } else if (session && path === "/login") {
     return NextResponse.redirect(new URL("/admin", req.url));
   }
   return NextResponse.next();
 }
+
+// else if (!session && path === "/admin/user") {
+//   return NextResponse.redirect(new URL("/login", req.url));
+// } else if (!session && path === "/admin/diagnosa") {
+//   return NextResponse.redirect(new URL("/login", req.url));
+// } else if (!session && path === "/admin/hasil") {
+//   return NextResponse.redirect(new URL("/login", req.url));
+// } else if (!session && path === "/admin/gejala") {
+//   return NextResponse.redirect(new URL("/login", req.url));
+// }

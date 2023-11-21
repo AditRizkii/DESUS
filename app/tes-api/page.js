@@ -1,15 +1,20 @@
 "use client";
 import { fetchServerResponse } from "next/dist/client/components/router-reducer/fetch-server-response";
+import { isUtama } from "../utils/checkJenis";
+import { useState } from "react";
+import { diagnose } from "../utils/Diagnose";
 
-export default async function page() {
-  const response = await fetch("http://localhost:3000/api/gejala/single?id=8");
-
-  const data = await response.json();
+export default function page() {
+  const [utama, setUtama] = useState(false);
+  // diagnose;
+  // const response = isUtama(1).then((value) => {
+  //   setUtama(value);
+  // });
+  // const response = isUtama(1);
   // const data1 = Object.values(data);
-  console.log(data);
-  return (
-    <div>
-      <p>{data?.gejala?.nama}</p>
-    </div>
-  );
+
+  // console.log(response);
+  // const str = response;
+
+  return <div>{/* <p>{utama ? "benar" : "salah"}</p> */}</div>;
 }
