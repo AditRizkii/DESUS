@@ -5,8 +5,8 @@ import { NextRequest, NextResponse } from "next/server";
 export const DELETE = async (req) => {
   try {
     const data = await req.json();
-    console.log(data);
-    const result = await prisma.gejala.delete({
+    // console.log(data);
+    const result = await prisma.user.delete({
       where: {
         id: data?.id,
       },

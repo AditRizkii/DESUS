@@ -9,7 +9,7 @@ const Button = ({ deleteItem }) => {
   const deletePost = async (gejalaID) => {
     try {
       // setLoading(true);
-      await fetch("/api/gejala/delete", {
+      await fetch("/api/JenisGejala/delete", {
         method: "DELETE",
         body: JSON.stringify({
           id: gejalaID,
