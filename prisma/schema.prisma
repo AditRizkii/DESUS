@@ -58,7 +58,7 @@ model Tingkatdepresi {
   id             Int     @id @default(autoincrement())
   nama           String?
   foto           String?
-  saran          String?
+  saran          String? @db.LongText
   Hasil_diagnosa Hasil[]
 }
 

@@ -2,7 +2,7 @@ import { useState } from "react";
 // import { isUtama } from "./checkJenis";
 const BASE_URL = "http://localhost:3000";
 
-export const diagnose = async (data) => {
+export const diagnose = (data) => {
   //   console.log(data);
   //   console.log(data[1] === "false");
   const arr = Object.keys(data).length;
@@ -20,7 +20,7 @@ export const diagnose = async (data) => {
   let percentageSedang = 0;
   let percentageBerat = 0;
 
-  console.log(data[21]);
+  //   console.log(data[21]);
 
   for (let i = 1; i <= 22; i++) {
     // console.log(i);
@@ -54,8 +54,9 @@ export const diagnose = async (data) => {
   //     result = "1";
   //   }
   //   console.log(lebih2minggu);
+  let sum = 0;
   if (jml_utama >= 2) {
-    let sum = (1 / 4) * 100;
+    sum = (1 / 4) * 100;
     percentageRingan = Math.round(sum);
     if (jml_lainnya >= 2) {
       sum = (2 / 4) * 100;
@@ -66,10 +67,54 @@ export const diagnose = async (data) => {
         if (lebih2minggu) {
           sum = (4 / 4) * 100;
           percentageRingan = Math.round(sum);
-          result = "1";
+          // result = "1";
         }
+      } else if (lebih2minggu) {
+        sum = (3 / 4) * 100;
+        percentageRingan = Math.round(sum);
+        // result = "1";
       }
+    } else if (k_sosial) {
+      sum = (2 / 4) * 100;
+      percentageRingan = Math.round(sum);
+      if (lebih2minggu) {
+        sum = (3 / 4) * 100;
+        percentageRingan = Math.round(sum);
+        // result = "1";
+      }
+    } else if (lebih2minggu) {
+      sum = (2 / 4) * 100;
+      percentageRingan = Math.round(sum);
+      // result = "1";
     }
+  } else if (jml_lainnya >= 2) {
+    sum = (1 / 4) * 100;
+    percentageRingan = Math.round(sum);
+    if (k_sosial) {
+      sum = (2 / 4) * 100;
+      percentageRingan = Math.round(sum);
+      if (lebih2minggu) {
+        sum = (3 / 4) * 100;
+        percentageRingan = Math.round(sum);
+        // result = "1";
+      }
+    } else if (lebih2minggu) {
+      sum = (2 / 4) * 100;
+      percentageRingan = Math.round(sum);
+      // result = "1";
+    }
+  } else if (k_sosial) {
+    sum = (1 / 4) * 100;
+    percentageRingan = Math.round(sum);
+    if (lebih2minggu) {
+      sum = (2 / 4) * 100;
+      percentageRingan = Math.round(sum);
+      // result = "1";
+    }
+  } else if (lebih2minggu) {
+    sum = (1 / 4) * 100;
+    percentageRingan = Math.round(sum);
+    // result = "1";
   }
 
   //   if (
@@ -82,10 +127,10 @@ export const diagnose = async (data) => {
   //     result = "2";
   //   }
 
-  if (jml_utama >= 2) {
-    let sum = (1 / 4) * 100;
+  if (jml_utama > 2) {
+    sum = (1 / 4) * 100;
     percentageSedang = Math.round(sum);
-    if (jml_lainnya >= 3 && jml_lainnya <= 4) {
+    if (jml_lainnya > 3 && jml_lainnya <= 4) {
       sum = (2 / 4) * 100;
       percentageSedang = Math.round(sum);
       if (m_sosial) {
@@ -94,10 +139,54 @@ export const diagnose = async (data) => {
         if (lebih2minggu) {
           sum = (4 / 4) * 100;
           percentageSedang = Math.round(sum);
-          result = "2";
+          // result = "2";
         }
+      } else if (lebih2minggu) {
+        sum = (3 / 4) * 100;
+        percentageSedang = Math.round(sum);
+        // result = "2";
       }
+    } else if (m_sosial) {
+      sum = (2 / 4) * 100;
+      percentageSedang = Math.round(sum);
+      if (lebih2minggu) {
+        sum = (3 / 4) * 100;
+        percentageSedang = Math.round(sum);
+        // result = "2";
+      }
+    } else if (lebih2minggu) {
+      sum = (2 / 4) * 100;
+      percentageSedang = Math.round(sum);
+      // result = "2";
     }
+  } else if (jml_lainnya > 3 && jml_lainnya <= 4) {
+    sum = (1 / 4) * 100;
+    percentageSedang = Math.round(sum);
+    if (m_sosial) {
+      sum = (2 / 4) * 100;
+      percentageSedang = Math.round(sum);
+      if (lebih2minggu) {
+        sum = (3 / 4) * 100;
+        percentageSedang = Math.round(sum);
+        // result = "2";
+      }
+    } else if (lebih2minggu) {
+      sum = (2 / 4) * 100;
+      percentageSedang = Math.round(sum);
+      // result = "2";
+    }
+  } else if (m_sosial) {
+    sum = (1 / 4) * 100;
+    percentageSedang = Math.round(sum);
+    if (lebih2minggu) {
+      sum = (2 / 4) * 100;
+      percentageSedang = Math.round(sum);
+      // result = "2";
+    }
+  } else if (lebih2minggu) {
+    sum = (1 / 4) * 100;
+    percentageSedang = Math.round(sum);
+    // result = "2";
   }
 
   //   if (jml_utama === 3 && jml_lainnya >= 4 && kurang2minggu && sm_sosial) {
@@ -105,7 +194,7 @@ export const diagnose = async (data) => {
   //   }
 
   if (jml_utama === 3) {
-    let sum = (1 / 4) * 100;
+    sum = (1 / 4) * 100;
     percentageBerat = Math.round(sum);
     if (jml_lainnya >= 4) {
       sum = (2 / 4) * 100;
@@ -116,12 +205,95 @@ export const diagnose = async (data) => {
         if (kurang2minggu) {
           sum = (4 / 4) * 100;
           percentageBerat = Math.round(sum);
-          result = "3";
+          // result = "3";
         }
+      } else if (kurang2minggu) {
+        sum = (3 / 4) * 100;
+        percentageBerat = Math.round(sum);
+        // result = "3";
       }
+    } else if (sm_sosial) {
+      sum = (2 / 4) * 100;
+      percentageBerat = Math.round(sum);
+      if (kurang2minggu) {
+        sum = (3 / 4) * 100;
+        percentageBerat = Math.round(sum);
+        // result = "3";
+      }
+    } else if (kurang2minggu) {
+      sum = (2 / 4) * 100;
+      percentageBerat = Math.round(sum);
+      // result = "3";
     }
+  } else if (jml_lainnya >= 4) {
+    sum = (1 / 4) * 100;
+    percentageBerat = Math.round(sum);
+    if (sm_sosial) {
+      sum = (2 / 4) * 100;
+      percentageBerat = Math.round(sum);
+      if (kurang2minggu) {
+        sum = (3 / 4) * 100;
+        percentageBerat = Math.round(sum);
+        // result = "3";
+      }
+    } else if (kurang2minggu) {
+      sum = (2 / 4) * 100;
+      percentageBerat = Math.round(sum);
+      // result = "3";
+    }
+  } else if (sm_sosial) {
+    sum = (1 / 4) * 100;
+    percentageBerat = Math.round(sum);
+    if (kurang2minggu) {
+      sum = (2 / 4) * 100;
+      percentageBerat = Math.round(sum);
+      // result = "3";
+    }
+  } else if (kurang2minggu) {
+    sum = (1 / 4) * 100;
+    percentageBerat = Math.round(sum);
+    // result = "3";
   }
 
+  const arrP = [percentageRingan, percentageSedang, percentageBerat];
+  const arrR = arrP.indexOf(Math.max(...arrP));
+  // let params = 0;
+  // if (arrR === 0) {
+  //   params = 1;
+  // } else if (arrR === 1) {
+  //   params = 2;
+  // } else if (arrR === 2) {
+  //   params = 3;
+  // } else {
+  //   params = 8;
+  // }
+  if (arrR === 0) {
+    const hasil = {
+      id: "1",
+      percentage: percentageRingan,
+    };
+    return hasil;
+  } else if (arrR === 1) {
+    const hasil = {
+      id: "2",
+      percentage: percentageSedang,
+    };
+    return hasil;
+  } else if (arrR === 2) {
+    const hasil = {
+      id: "3",
+      percentage: percentageBerat,
+    };
+    return hasil;
+  } else {
+    const hasil = {
+      id: 8,
+      percentage: 0,
+    };
+    return hasil;
+  }
+
+  //   console.log({ arrP, arrR });
   //   console.log({ jml_lainnya, jml_utama, result, percentageRingan });
-  return result;
+  //   return result;
 };
