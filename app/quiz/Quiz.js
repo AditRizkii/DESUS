@@ -6,6 +6,7 @@ import Modal from "../_components/Quiz/Modal";
 import prisma from "@/lib/prisma";
 import getGejala from "../api/gejala/get-gejala";
 import { diagnose } from "../utils/Diagnose";
+// import { useRouter } from "next/router";
 import { useRouter } from "next/navigation";
 
 const Quiz = ({ questions }) => {
@@ -14,7 +15,6 @@ const Quiz = ({ questions }) => {
   const [result, setResult] = useState("");
   const [solusi, setSolusi] = useState("");
   const router = useRouter();
-  // const [questions, setQuestions] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
   // const questions = await fetch("/api/gejala/get-gejala");
@@ -28,31 +28,26 @@ const Quiz = ({ questions }) => {
     });
   };
 
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault();
-    const result = diagnose(data);
-    if (result === "1" || result === "2" || result === "3" || result === "8") {
-      router.push(`/result/${result}`);
+    const hasil = diagnose(data);
+    // const hasil = diagnose(data).then((value) => {
+    //   setResult(value);
+    // });
+
+    console.log(hasil);
+    if (
+      hasil?.id === "1" ||
+      hasil?.id === "2" ||
+      hasil?.id === "3" ||
+      hasil?.id === "8"
+    ) {
+      router.push(`/quiz/${hasil?.id}?percentage=${hasil?.percentage}`);
     }
     // const arr = data;
     // console.log(arr);
   };
 
-  // useEffect(() => {
-  //   getGejalasync();
-  // }, []);
-
-  // const getGejalasync = async () => {
-  //   setIsLoading(true);
-  //   // const objQuestions = await getGejala();
-  //   // // const objQuestions =  aa;
-  //   const arrquestions = Object.values(gejala);
-  //   setQuestions(arrquestions);
-  //   setIsLoading(false);
-  // };
-  // if (isLoading) {
-  //   return <div className="text-center p-4 text-6xl">Loading data...</div>;
-  // }
   return (
     <section className="bg-merahtua">
       <div className="lg:p-16 mx-auto md:w-5/6 sm:w-11/12 lg:w-8/12 sm:p-0 sm:pt-20 flex flex-col gap-5">
