@@ -58,19 +58,19 @@ export default function Modal() {
         <div className="flex flex-wrap -mx-3 w-full">
           <div className="relative overflow-x-auto shadow-md sm:rounded-lg w-full">
             <h3 className="px-4 py-3">Create a new Gejala</h3>
-            <form onSubmit={handleSubmit} className="w-full max-w-sm mb-4">
+            <form onSubmit={handleSubmit} className="w-full max-w-4xl mb-4">
               <div className="md:flex md:items-center mb-6">
-                <div className="md:w-1/3">
+                <div className="md:w-2/12">
                   <label
-                    className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                    className="block text-slate-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
                     htmlFor="nama"
                   >
                     Gejala
                   </label>
                 </div>
-                <div className="md:w-2/3">
+                <div className="md:w-9/12">
                   <input
-                    className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                    className="bg-gray-100 h-20 text-start appearance-none border-2 border-gray-100 rounded w-full py-2 px-4 text-slate-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
                     id="nama"
                     name="nama"
                     type="text"
@@ -80,17 +80,17 @@ export default function Modal() {
                 </div>
               </div>
               <div className="md:flex md:items-center mb-6">
-                <div className="md:w-1/3">
+                <div className="md:w-2/12">
                   <label
-                    className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                    className="block text-slate-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
                     htmlFor="jenisGejalaID"
                   >
                     Jenis Gejala
                   </label>
                 </div>
-                <div className="md:w-2/3">
+                <div className="md:w-3/12">
                   {/* <input
-                    className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                    className="bg-gray-100 appearance-none border-2 border-gray-100 rounded w-full py-2 px-4 text-slate-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
                     id="password"
                     name="password"
                     type="sele"
@@ -100,7 +100,7 @@ export default function Modal() {
                   <select
                     name="jenisGejalaID"
                     id="jenisGejalaID"
-                    className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                    className="bg-gray-100 appearance-none border-2 border-gray-100 rounded w-full py-2 px-4 text-slate-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
                   >
                     <option defaultValue="0" disabled selected>
                       Pilih Gejala
@@ -111,12 +111,11 @@ export default function Modal() {
                 </div>
               </div>
 
-              <div className="md:flex md:items-center">
-                <div className="md:w-1/3"></div>
-                <div className="md:w-2/3">
+              <div className="md:flex md:items-center justify-start">
+                <div className="md:w-2/3 ml-[150px]">
                   <button
                     className={
-                      "shadow bg-purple-400 hover:bg-purple-400 focus:shadow-outline focus:outline-none py-2 px-4 rounded"
+                      "shadow border-merah border-2 hover:bg-merah focus:shadow-outline focus:outline-none py-2 px-6 rounded font-semibold text-merahtua hover:text-white"
                     }
                     type="submit"
                   >
