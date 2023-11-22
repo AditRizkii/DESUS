@@ -45,8 +45,8 @@ const ContentDiagnose = ({ id, saran, image, diagnose }) => {
               {diagnose}
             </h3>
           </div>
-          <div>
-            <p>
+          <div className="w-10/12 pr-8 text-justify py-8">
+            <p className="mb-4">
               Selain perawatan medis dan terapi, penting untuk menjaga pola
               tidur yang baik, makan sehat, dan menjalani gaya hidup yang
               seimbang. Dukungan sosial juga tetap penting dalam semua tingkatan

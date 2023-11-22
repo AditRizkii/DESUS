@@ -7,14 +7,8 @@ const TabelTingkat = async () => {
   const arrTingkat = Object.values(tingkat);
   return (
     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-      <caption class="p-5 text-lg font-semibold text-left text-gray-900 bg-white dark:text-white dark:bg-gray-800">
+      <caption class="p-5 pb-3 text-lg font-semibold text-left text-gray-900 bg-white dark:text-white dark:bg-gray-800">
         Tingkat Depresi{" "}
-        <Link
-          href="#"
-          class="mt-1 mx-2 px-2 py-2 mb-2 bg-blue-100 text-blue-800 text-xs font-medium mr-2 rounded dark:bg-blue-900 dark:text-blue-300"
-        >
-          Create
-        </Link>
       </caption>
       <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
         <tr>
