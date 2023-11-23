@@ -3,6 +3,8 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import ContentDiagnose from "./content";
+import Navbar from "@/app/_components/Navbar";
+import Footer from "@/app/_components/Footer";
 
 export default async function Result({ params }) {
   const id = params.id;
@@ -11,7 +13,9 @@ export default async function Result({ params }) {
   // const sarans = JSON.parse()
   // console.log(arrTingkat);
   return (
-    <section className=" h-fit w-full bg-merahtua font-Poppins pt-16 pb-16">
+    <div>
+      <Navbar />
+      <section className=" h-fit w-full bg-merahtua font-Poppins pt-16 pb-16">
       {arrTingkat.map((e) => {
         // console.log(parseInt(id) === e.id);
         if (e?.id === parseInt(id)) {
@@ -45,6 +49,9 @@ export default async function Result({ params }) {
           Back
         </Link>
       </div>
-    </section>
+      </section>
+      <Footer />
+    </div>
+    
   );
 }

@@ -15,15 +15,15 @@ export default function Home() {
                     <h5 class="mb-2 font-bold dark:text-white">1100</h5>
                     <p class="mb-0 dark:text-white dark:opacity-60">
                       <span class="text-sm font-bold leading-normal text-emerald-500">
-                        +5% 
+                        +5%
                       </span>
-                       since yesterday
+                      since yesterday
                     </p>
                   </div>
                 </div>
                 <div class="px-3 text-right basis-1/3">
                   <div class="inline-block w-12 h-12 text-center rounded-circle bg-gradient-to-tl from-blue-500 to-violet-500">
-                  <img width="48" height="48" src="https://img.icons8.com/arcade/100/user-male-circle.png" alt="user-male-circle"/>
+                    <img width="48" height="48" src="https://img.icons8.com/arcade/100/user-male-circle.png" alt="user-male-circle" />
                   </div>
                 </div>
               </div>
@@ -52,7 +52,7 @@ export default function Home() {
                 </div>
                 <div class="px-3 text-right basis-1/3">
                   <div class="inline-block w-12 h-12 text-center rounded-circle bg-gradient-to-tl from-yellow-400 to-orange-300">
-                  <img width="48" height="48" src="https://img.icons8.com/3d-fluency/100/neutral-face-1.png" alt="neutral-face-1"/>
+                    <img width="48" height="48" src="https://img.icons8.com/3d-fluency/100/neutral-face-1.png" alt="neutral-face-1" />
                   </div>
                 </div>
               </div>
@@ -81,7 +81,7 @@ export default function Home() {
                 </div>
                 <div class="px-3 text-right basis-1/3">
                   <div class="inline-block w-12 h-12 text-center rounded-circle bg-gradient-to-tl from-orange-500 to-yellow-500">
-                  <img width="48" height="48" src="https://img.icons8.com/3d-fluency/100/frowning-face-1.png" alt="frowning-face-1"/>
+                    <img width="48" height="48" src="https://img.icons8.com/3d-fluency/100/frowning-face-1.png" alt="frowning-face-1" />
                   </div>
                 </div>
               </div>
@@ -110,7 +110,7 @@ export default function Home() {
                 </div>
                 <div class="px-3 text-right basis-1/3">
                   <div class="inline-block w-12 h-12 text-center rounded-circle bg-gradient-to-tl from-red-600 to-orange-600">
-                  <img width="48" height="48" src="https://img.icons8.com/3d-fluency/94/fearful-face-icon.png" alt="fearful-face-icon"/>
+                    <img width="48" height="48" src="https://img.icons8.com/3d-fluency/94/fearful-face-icon.png" alt="fearful-face-icon" />
                   </div>
                 </div>
               </div>
@@ -150,7 +150,7 @@ export default function Home() {
                           Tingkat Depresi
                         </p>
                         <h6 class="mb-0 text-sm leading-normal dark:text-white">
-                        
+
                         </h6>
                       </div>
                     </td>
@@ -235,7 +235,7 @@ export default function Home() {
                       </div>
                     </td>
                   </tr>
-                  
+
                 </tbody>
               </table>
             </div>
@@ -251,7 +251,7 @@ export default function Home() {
                 <li class="relative flex justify-between py-2 pr-4 mb-2 border-0 rounded-t-lg rounded-xl text-inherit">
                   <div class="flex items-center">
                     <div class="inline-block w-8 h-8 mr-4 text-center text-black bg-center fill-current stroke-none rounded-xl">
-                    <img width="32" height="32" src="https://img.icons8.com/arcade/100/high-importance.png" alt="high-importance"/>
+                      <img width="32" height="32" src="https://img.icons8.com/arcade/100/high-importance.png" alt="high-importance" />
                     </div>
                     <div class="flex flex-col">
                       <h6 class="mb-1 text-sm leading-normal text-slate-700 dark:text-white">
@@ -259,7 +259,7 @@ export default function Home() {
                       </h6>
                       <span class="text-xs leading-tight dark:text-white/80">
                         3 questions
-                        
+
                       </span>
                     </div>
                   </div>
@@ -275,14 +275,61 @@ export default function Home() {
                 <li class="relative flex justify-between py-2 pr-4 mb-2 border-0 rounded-xl text-inherit">
                   <div class="flex items-center">
                     <div class="inline-block w-8 h-8 mr-4 text-center text-black bg-center  fill-current stroke-none rounded-xl">
-                    <img width="32" height="32" src="https://img.icons8.com/arcade/64/plus.png" alt="plus"/>
+                      <img width="32" height="32" src="https://img.icons8.com/arcade/64/plus.png" alt="plus" />
                     </div>
                     <div class="flex flex-col">
                       <h6 class="mb-1 text-sm leading-normal text-slate-700 dark:text-white">
                         Gejala Lainnya
                       </h6>
                       <span class="text-xs leading-tight dark:text-white/80">
-                        6 questions 
+                        6 questions
+                      </span>
+                    </div>
+                  </div>
+                  <div class="flex">
+                    <button class="group ease-in leading-pro text-xs rounded-3.5xl p-1.2 h-6.5 w-6.5 mx-0 my-auto inline-block cursor-pointer border-0 bg-transparent text-center align-middle font-bold text-slate-700 shadow-none transition-all dark:text-white">
+                      <i
+                        class="ni ease-bounce text-2xs group-hover:translate-x-1.25 ni-bold-right transition-all duration-200"
+                        aria-hidden="true"
+                      ></i>
+                    </button>
+                  </div>
+                </li>
+                <li class="relative flex justify-between py-2 pr-4 mb-2 border-0 rounded-t-lg rounded-xl text-inherit">
+                  <div class="flex items-center">
+                    <div class="inline-block w-8 h-8 mr-4 text-center text-black bg-center fill-current stroke-none rounded-xl">
+                      <img width="32" height="32" src="https://img.icons8.com/arcade/64/stopwatch.png" alt="stopwatch" />
+                    </div>
+                    <div class="flex flex-col">
+                      <h6 class="mb-1 text-sm leading-normal text-slate-700 dark:text-white">
+                        Kurun Waktu
+                      </h6>
+                      <span class="text-xs leading-tight dark:text-white/80">
+                        2 questions
+
+                      </span>
+                    </div>
+                  </div>
+                  <div class="flex">
+                    <button class="group ease-in leading-pro text-xs rounded-3.5xl p-1.2 h-6.5 w-6.5 mx-0 my-auto inline-block cursor-pointer border-0 bg-transparent text-center align-middle font-bold text-slate-700 shadow-none transition-all dark:text-white">
+                      <i
+                        class="ni ease-bounce text-2xs group-hover:translate-x-1.25 ni-bold-right transition-all duration-200"
+                        aria-hidden="true"
+                      ></i>
+                    </button>
+                  </div>
+                </li>
+                <li class="relative flex justify-between py-2 pr-4 mb-2 border-0 rounded-xl text-inherit">
+                  <div class="flex items-center">
+                    <div class="inline-block w-8 h-8 mr-4 text-center text-black bg-center  fill-current stroke-none rounded-xl">
+                      <img width="32" height="32" src="https://img.icons8.com/arcade/32/group-task.png" alt="group-task" />
+                    </div>
+                    <div class="flex flex-col">
+                      <h6 class="mb-1 text-sm leading-normal text-slate-700 dark:text-white">
+                        Kehidupan Sosial
+                      </h6>
+                      <span class="text-xs leading-tight dark:text-white/80">
+                        4 questions
                       </span>
                     </div>
                   </div>
