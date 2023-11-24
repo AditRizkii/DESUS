@@ -8,9 +8,10 @@ export const POST = async (req) => {
 
     const result = await prisma.hasil.create({
       data: {
-        diagnosa_id: data?.diagnosa_id,
-        gejala_id: data?.gejala_id,
-        tingkat_id: data?.tingkat_id,
+        percentage: parseInt(data?.percentage),
+        diagnosa_id: parseInt(data?.diagnosa_id),
+        gejala_id: parseInt(data?.gejala_id),
+        tingkat_id: parseInt(data?.tingkat_id),
       },
     });
 

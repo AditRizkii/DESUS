@@ -10,10 +10,7 @@ import { diagnose } from "../utils/Diagnose";
 import { useRouter } from "next/navigation";
 
 const Quiz = ({ questions }) => {
-  const [isOpen, setIsOpen] = useState(false);
   const [data, setData] = useState({});
-  const [result, setResult] = useState("");
-  const [solusi, setSolusi] = useState("");
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
 
@@ -42,6 +39,16 @@ const Quiz = ({ questions }) => {
       hasil?.id === "3" ||
       hasil?.id === "8"
     ) {
+      await fetch(`/api/hasil/create`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          percentage: hasil?.percentage,
+          diagnosa_id: hasil?.id,
+          gejala_id: hasil?.id,
+          tingkat_id: hasil?.id,
+        }),
+      });
       router.push(`/quiz/${hasil?.id}?percentage=${hasil?.percentage}`);
     }
     // const arr = data;
@@ -83,9 +90,6 @@ const Quiz = ({ questions }) => {
             </div>
           </div>
         </form>
-        {isOpen && (
-          <Modal setIsOpen={setIsOpen} result={result} solusi={solusi} />
-        )}
       </div>
     </section>
   );

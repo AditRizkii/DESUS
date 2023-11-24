@@ -64,6 +64,7 @@ model Tingkatdepresi {
 
 model Hasil {
   id          Int            @id @default(autoincrement())
+  percentage  Int
   diagnosa    Diagnosa       @relation(fields: [diagnosa_id], references: [id])
   diagnosa_id Int
   nama_gejala Gejala         @relation(fields: [gejala_id], references: [id])
