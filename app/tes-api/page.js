@@ -6,6 +6,7 @@ import { diagnose } from "../utils/Diagnose";
 
 export default function page() {
   const [utama, setUtama] = useState(false);
+
   // diagnose;
   // const response = isUtama(1).then((value) => {
   //   setUtama(value);
